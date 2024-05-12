@@ -1,0 +1,18 @@
+{% extends "admin.html" %}
+{% block title %}Xem sản phẩm{% endblock %}
+{% block content %}
+    <h1>Danh sách sản phẩm</h1>
+    <a href="{{ url_for('add_product') }}"><button>Thêm sản phẩm</button></a>
+    <table border="1">
+        <tr>
+            <th>Tên sản phẩm</th>
+            <th>Giá sản phẩm</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.ten_san_pham }}</td>
+            <td>{{ product.gia_tien }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

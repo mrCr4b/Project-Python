@@ -1,0 +1,24 @@
+{% extends "user.html" %}
+{% block title %}Xem giỏ hàng{% endblock %}
+{% block content %}
+    <table border="1">
+        <tr>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Số tiền</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.ten_san_pham }}</td>
+            <td>{{ product.so_luong }}</td>
+            <td>{{ product.so_tien }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form action="/pay" method="POST">
+        <input type="submit" value="Thanh toán">
+    </form>
+    <form action="/no_pay" method="POST">
+        <input type="submit" value="Hủy thanh toán">
+    </form>
+{% endblock %}

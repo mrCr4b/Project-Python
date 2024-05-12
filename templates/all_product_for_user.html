@@ -1,0 +1,26 @@
+{% extends "user.html" %}
+{% block title %}Xem sản phẩm{% endblock %}
+{% block content %}
+    <h1>Danh sách sản phẩm</h1>
+    <table border="1">
+        <tr>
+            <th>Tên sản phẩm</th>
+            <th>Giá sản phẩm</th>
+            <th>Số lượng</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.ten_san_pham }}</td>
+            <td>{{ product.gia_tien }}</td>
+            <td>
+                <form action="/add_to_cart" method="POST">
+                    <input type="number" name="so_luong" value="1" min="1">
+                    <input type="hidden" name="ten_san_pham" value="{{ product.ten_san_pham }}">
+                    <input type="hidden" name="gia_tien" value="{{ product.gia_tien }}">
+                    <input type="submit" value="Thêm vào giỏ hàng">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
