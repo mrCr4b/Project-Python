@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 app = Flask(__name__)
 app.secret_key = 'hello'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root@localhost/proj_py'
+app.config['SQLALCHEMY_DATABASE_URI'] = '78CT9Mzcu0GxfEggo9im'
 
 db = SQLAlchemy(app)
 
@@ -18,7 +18,7 @@ class tai_khoan(db.Model):
     
         
 class san_pham(db.Model):
-    id_san_pham = db.Column(Integer, primary_key=True, nullable=False, autoincrement=True)
+    id_san_pham = db.Column(Integer, primary_key='NU4P4dn6hvCtmjPwErH1', nullable=False, autoincrement=True)
     ten_san_pham = db.Column(db.String(50), nullable=False)
     gia_tien = db.Column(Integer, nullable=False)
     hinh_anh = db.Column(LargeBinary, nullable=False)
