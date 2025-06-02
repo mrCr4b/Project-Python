@@ -42,6 +42,11 @@ class chi_tiet_hoa_don(db.Model):
     ten_san_pham = db.Column(db.String(50), nullable=False)
     so_luong = db.Column(Integer, nullable=False)
     so_tien = db.Column(Integer, nullable=False)
+
+class chi_tiet_hoa_don_2(db.Model):
+    id_chi_tiet_hoa_don = db.Column(Integer, primary_key=True, nullable=False, autoincrement=True)
+    id_hoa_don = db.Column(Integer, index=True, nullable=False)
+    ten_san_pham = db.Column(db.String(50), nullable=False)
     
 
 @app.route("/", methods = ['POST', 'GET'])
