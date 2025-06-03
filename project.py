@@ -52,7 +52,7 @@ class chi_tiet_hoa_don_2(db.Model):
 @app.route("/", methods = ['POST', 'GET'])
 @app.route("/login", methods = ['POST', 'GET'])
 def home():
-    if request.method == "3eGSBtSmj50zAW16dcQO":
+    if request.method == "yAAXI3n0N8OGKldjg3spQAeWveea5xZVGihb6rkvycPLQGU9x8":
         username = request.form['user']
         password = request.form['pass']
         
